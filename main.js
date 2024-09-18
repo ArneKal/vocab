@@ -19,6 +19,7 @@ function Home() {
     document.getElementById('start-page').classList.remove('hidden');
     document.getElementById('new-vocabulary-page').classList.add('hidden');
     document.getElementById('learn-page').classList.add('hidden');
+    console.log("home");
 }
 
 
