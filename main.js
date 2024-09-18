@@ -103,7 +103,7 @@ function playAudio() {
     // Generate Google Translate TTS URL
     const text = encodeURIComponent(currentVocabulary.translation); // The word to be spoken
     const lang = getLanguageCode(currentLanguage); // Convert language to Google Translate language code
-    const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${text}&tl=${lang}&client=tw-ob`;
+    const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${text}&tl=${lang}`;
 
     audioPlayer.src = ttsUrl;
     audioPlayer.play();
