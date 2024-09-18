@@ -103,10 +103,12 @@ function playAudio() {
     // Generate Google Translate TTS URL
     const text = encodeURIComponent(currentVocabulary.translation); // The word to be spoken
     const lang = getLanguageCode(currentLanguage); // Convert language to Google Translate language code
-    const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${text}&tl=${lang}`;
+    //const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${text}&tl=${lang}&client=tw-ob`;
 
-    audioPlayer.src = ttsUrl;
-    audioPlayer.play();
+    //audioPlayer.src = ttsUrl;
+    //audioPlayer.play();
+    var msg = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(msg);
     console.log("played audio");
 }
 
