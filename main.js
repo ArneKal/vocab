@@ -123,7 +123,7 @@ function getLanguageCode(language) {
         german: 'de',
         italian: 'it',
         portuguese: 'pt',
-		swedish: 'sv'
+		swedish: 'sv-SE'
         // Add more languages as needed
     };
 
