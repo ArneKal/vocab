@@ -14,7 +14,7 @@ function fetchLanguages() {
         select.appendChild(option);
     });
 }
-
+//test
 function loadVocabulary() {
     const select = document.getElementById('language-select');
     currentLanguage = select.value;
