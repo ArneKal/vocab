@@ -30,7 +30,7 @@ app.post('/vocabularies/:language', (req, res) => {
     const language = req.params.language;
     const newVocabulary = req.body;
 
-    const filePath = path.join(__dirname, 'public/vocabularies', `${language}.json`);
+    const filePath = path.join(__dirname, 'vocabularies', `${language}.json`);
 
     // Read the existing file (or create an empty array if it doesn't exist)
     let vocabularies = [];
