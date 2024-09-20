@@ -107,11 +107,11 @@ function playAudio() {
 
     //audioPlayer.src = ttsUrl;
     //audioPlayer.play();
-    var msg = new SpeechSynthesisUtterance(text);
-    msg.lang= getLanguageCode;
-    window.speechSynthesis.speak(msg);
+    //var msg = new SpeechSynthesisUtterance(text);
+    //msg.lang= getLanguageCode;
+    //window.speechSynthesis.speak(msg);
 
-    console.log("played audio");
+    console.log("not implemented");
 }
 
 function getLanguageCode(language) {
