@@ -4,7 +4,7 @@ let currentLanguage = '';
 
 function fetchLanguages() {
     // Available languages (this could be dynamic)
-    const languages = ['english', 'french', 'spanish']; // Add more languages here
+    const languages = ['swedish']; // Add more languages here
     const select = document.getElementById('language-select');
 
     languages.forEach(language => {
@@ -85,21 +85,24 @@ function revealAnswer() {
     resultElement.textContent += ` Correct Answer: ${currentVocabulary.translation}`;
 }
 
+//notimplemented
 function playAudio() {
-    const audioPlayer = document.getElementById('audio-player');
-    const text = encodeURIComponent(currentVocabulary.original);
-    const lang = getLanguageCode(currentLanguage);
-    const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${text}&tl=${lang}&client=tw-ob`;
+    //const audioPlayer = document.getElementById('audio-player');
+    //const text = encodeURIComponent(currentVocabulary.original);
+    //const lang = getLanguageCode(currentLanguage);
+    //const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${text}&tl=${lang}&client=tw-ob`;
 
-    audioPlayer.src = ttsUrl;
-    audioPlayer.play();
+    //audioPlayer.src = ttsUrl;
+    //audioPlayer.play();
 }
 
+//only needed for playAudio which isnt implemented
 function getLanguageCode(language) {
     const languageCodes = {
         english: 'en',
         french: 'fr',
         spanish: 'es',
+        swedish: 'sv',
         // Add more languages here
     };
     return languageCodes[language.toLowerCase()] || 'en';
