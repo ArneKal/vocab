@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+.hidden {
+    display: none;
+}
+.correct {
+    color: green;
+}
+.wrong {
+    color: red;
+}
+input {
+    margin: 10px 0;
+}
