@@ -24,7 +24,7 @@ function loadVocabulary() {
         return;
     }
 
-    fetch(`/vocabularies/${currentLanguage}.json`)
+    fetch(`${currentLanguage}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Failed to load vocabulary for ${currentLanguage}`);
