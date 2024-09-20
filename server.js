@@ -15,7 +15,7 @@ app.use(express.static('public'));
 // Serve vocabularies from the vocabularies folder
 app.get('/vocabularies/:language', (req, res) => {
     const language = req.params.language;
-    const filePath = path.join(__dirname, 'vocabularies', `${language}.json`);
+    const filePath = path.join(__dirname, 'public/vocabularies', `${language}.json`);
 
     // Check if the vocabulary file exists
     if (fs.existsSync(filePath)) {
@@ -30,7 +30,7 @@ app.post('/vocabularies/:language', (req, res) => {
     const language = req.params.language;
     const newVocabulary = req.body;
 
-    const filePath = path.join(__dirname, 'vocabularies', `${language}.json`);
+    const filePath = path.join(__dirname, 'public/vocabularies', `${language}.json`);
 
     // Read the existing file (or create an empty array if it doesn't exist)
     let vocabularies = [];
