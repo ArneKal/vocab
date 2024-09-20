@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary Trainer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Vocabulary Trainer</h1>
+
+    <!-- Start Page -->
+    <div id="start-page">
+        <h2>Select Language or Create Vocabulary</h2>
+        <select id="language-select">
+            <option value="" disabled selected>Select a language</option>
+        </select>
+        <button onclick="loadVocabulary()">Start Learning</button>
+        <button onclick="showNewVocabularyForm()">Add New Vocabulary</button>
+    </div>
+
+    <!-- Learning Page -->
+    <div id="learn-page" class="hidden">
+        <h2 id="original-word"></h2>
+        <input type="text" id="user-input" placeholder="Your translation" />
+        <button onclick="checkAnswer()">Check Answer</button>
+        <p id="result"></p>
+        <button id="reveal-answer" class="hidden" onclick="revealAnswer()">Reveal Answer</button>
+        <button id="play-audio" class="hidden" onclick="playAudio()">Play Audio</button>
+    </div>
+
+    <!-- New Vocabulary Page -->
+    <div id="new-vocabulary-page" class="hidden">
+        <h2>Add New Vocabulary</h2>
+        <input type="text" id="new-language" placeholder="Language" />
+        <input type="text" id="new-original-word" placeholder="Original Word" />
+        <input type="text" id="new-translation" placeholder="Translation" />
+        <button onclick="saveVocabulary()">Save Vocabulary</button>
+    </div>
+
+    <audio id="audio-player"></audio>
+
+    <script src="main.js"></script>
+</body>
+</html>
