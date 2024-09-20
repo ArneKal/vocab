@@ -132,7 +132,7 @@ function saveVocabulary() {
 
     const newVocabulary = { original: originalWord, translation };
 
-    fetch(`/vocabularies/${language}.json`, {
+    fetch(`/vocabularies/${language}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
