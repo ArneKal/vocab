@@ -19,7 +19,7 @@ function Home() {
     document.getElementById('start-page').classList.remove('hidden');
     document.getElementById('new-vocabulary-page').classList.add('hidden');
     document.getElementById('learn-page').classList.add('hidden');
-    console.log("home");
+    //Console.log("home");
 }
 
 
@@ -97,10 +97,11 @@ function revealAnswer() {
     resultElement.textContent += ` Correct Answer: ${currentVocabulary.translation}`;
 }
 
+//not implemented
 function playAudio() {
     const audioPlayer = document.getElementById('audio-player');
 
-    // Generate Google Translate TTS URL
+    // Generate Google Translate TTS URL - outdated
     const text = encodeURIComponent(currentVocabulary.translation); // The word to be spoken
     const lang = getLanguageCode(currentLanguage); // Convert language to Google Translate language code
     //const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${text}&tl=${lang}&client=tw-ob`;
@@ -114,6 +115,7 @@ function playAudio() {
     console.log("not implemented");
 }
 
+//Used for TTs - not used since not implemented
 function getLanguageCode(language) {
     // Mapping user-friendly language names to Google Translate codes
     const languageCodes = {
@@ -123,7 +125,7 @@ function getLanguageCode(language) {
         german: 'de',
         italian: 'it',
         portuguese: 'pt',
-		swedish: 'sv-SE'
+		swedish: 'sv'
         // Add more languages as needed
     };
 
@@ -150,13 +152,31 @@ function saveVocabulary() {
         translation: translation
     };
 
-    // Save vocabulary to JSON file (simulated here, you would need backend code)
-    console.log(`Saving vocabulary to ${language}.json`, newVocabulary);
+     // Send a POST request to the server to save the new vocabulary
+     fetch(`/vocabularies/${language}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newVocabulary)
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
 
-    // Clear inputs
-    document.getElementById('new-language').value = '';
-    document.getElementById('new-original-word').value = '';
-    document.getElementById('new-translation').value = '';
+        // Clear inputs after successful save
+        document.getElementById('new-language').value = '';
+        document.getElementById('new-original-word').value = '';
+        document.getElementById('new-translation').value = '';
+
+        // Return to the start page
+        document.getElementById('new-vocabulary-page').classList.add('hidden');
+        document.getElementById('start-page').classList.remove('hidden');
+    })
+    .catch(error => {
+        console.error('Error saving vocabulary:', error);
+        alert('Failed to save vocabulary.');
+    });
 
     // Return to start page
     document.getElementById('new-vocabulary-page').classList.add('hidden');
