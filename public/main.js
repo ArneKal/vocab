@@ -45,6 +45,13 @@ function loadVocabulary() {
         });
 }
 
+function Home() {
+    document.getElementById('start-page').classList.remove('hidden');
+    document.getElementById('new-vocabulary-page').classList.add('hidden');
+    document.getElementById('learn-page').classList.add('hidden');
+    //Console.log("home");
+}
+
 function showLearningPage() {
     document.getElementById('start-page').classList.add('hidden');
     document.getElementById('learn-page').classList.remove('hidden');
