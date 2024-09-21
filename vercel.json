@@ -2,7 +2,7 @@
     "version": 2,
     "routes": [
       {
-        "src":"/*",
+        "src":"/vocabularies/*.*",
         "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
       }
     ]
