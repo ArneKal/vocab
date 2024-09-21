@@ -32,7 +32,9 @@
     <!-- New Vocabulary Page -->
     <div id="new-vocabulary-page" class="hidden">
         <h2>Add New Vocabulary</h2>
-        <input type="text" id="new-language" placeholder="Language" />
+        <select id="new-language" >
+            <option value="" disabled selected>Select a language</option>"
+        </select>
         <input type="text" id="new-original-word" placeholder="Original Word" />
         <input type="text" id="new-translation" placeholder="Translation" />
         <button onclick="saveVocabulary()">Save Vocabulary</button>

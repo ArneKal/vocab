@@ -6,12 +6,20 @@ function fetchLanguages() {
     // Available languages (this could be dynamic)
     const languages = ['swedish']; // Add more languages here
     const select = document.getElementById('language-select');
+    const newSelect = document.getElementById('new-language');
 
     languages.forEach(language => {
         const option = document.createElement('option');
         option.value = language;
         option.text = language;
         select.appendChild(option);
+    });
+
+    languages.forEach(language => {
+        const option = document.createElement('option');
+        option.value = language;
+        option.text = language;
+        newSelect.appendChild(option);
     });
 }
 
