@@ -2,9 +2,8 @@
     "version": 2,
     "routes": [
       {
-        "src": "/vocabularies/swedish.json",
-        "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-        "dest":"/vocabularies/swedish.json"
+        "src": "*",
+        "methods": ["GET", "POST"]
       }
     ]
   }
