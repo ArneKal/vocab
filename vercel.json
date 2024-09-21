@@ -1,9 +1,9 @@
 {
     "version": 2,
-    "builds": [{ "src": "public/index.gtml", "use": "@vercel/node" }],
+    "builds": [{ "src": "public/index.html", "use": "@vercel/node" }],
     "routes": [
       {
-        "src": "/(.*)",
+        "src": "/public/(.*)",
         "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
       }
     ]
