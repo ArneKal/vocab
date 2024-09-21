@@ -3,8 +3,8 @@
     "routes": [
       {
         "src": "/vocabularies/swedish.json",
-        "dest":"/vocabularies/swedish.json",
-        "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+        "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+        "dest":"/vocabularies/swedish.json"
       }
     ]
   }
